@@ -54,7 +54,7 @@ export async function signup (req, res){
             maxAge: 7 * 24 * 60 * 60 * 1000,
             httpOnly: true, // prevent XSS attacks,
             // sameSite: "strict", //prevent CSRF attacks
-            sameSite: "None",  // ✅ Cross-origin safe
+            sameSite: process.env.NODE_ENV === "production" ? "None" : "Lax",  // ✅ Cross-origin safe
             secure: process.env.NODE_ENV === "production"
         })
 
@@ -90,7 +90,7 @@ export async function login(req, res) {
             maxAge: 7 * 24 * 60 * 60 * 1000,
             httpOnly: true, // prevent XSS attacks,
             // sameSite: "strict", //prevent CSRF attacks
-            sameSite: "None",  // ✅ Cross-origin safe
+            sameSite: process.env.NODE_ENV === "production" ? "None" : "Lax",  // ✅ Cross-origin safe
             secure: process.env.NODE_ENV === "production"
         })
 
