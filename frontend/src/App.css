@@ -1,0 +1,10 @@
+.input-dark::placeholder,
+.textarea-dark::placeholder {
+  color: white !important;
+  opacity: 1; /* Full opacity */
+}
+input::placeholder,
+textarea::placeholder {
+  color: rgb(184, 183, 183) !important;
+  opacity: 1 !important;
+}
