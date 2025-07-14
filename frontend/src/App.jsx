@@ -37,7 +37,7 @@ function App() {
       <Toaster position="top-right" />
       <Routes>
         <Route path="/" element={isAuthenticated && isOnboarded ? (<Layout showSidebar={true}> <HomePage /> </Layout>) : (<Navigate to={!isAuthenticated ? "/login" : "/onboarding"} />)} />
-        <Route path='signup' element={!isAuthenticated ? <SignUpPage /> : <Navigate to="/" />} />
+        <Route path='/signup' element={!isAuthenticated ? <SignUpPage /> : <Navigate to="/" />} />
         <Route path='/login' element={!isAuthenticated ? <LoginPage /> : <Navigate to={isOnboarded ? "/" : "/onboarding"} />} />
         <Route
           path='notifications'
@@ -45,7 +45,7 @@ function App() {
             <Layout showSidebar={true}>
                 <NotificationsPage />
               </Layout>
-          ) : (<Navigate to={!isAuthenticated ? "login" : "onboarding"} />)
+          ) : (<Navigate to={!isAuthenticated ? "/login" : "/onboarding"} />)
           } />
 
         <Route
@@ -71,7 +71,7 @@ function App() {
             )
           }
         />
-        <Route path='onboarding'
+        <Route path='/onboarding'
           element={
             isAuthenticated ?
               (
