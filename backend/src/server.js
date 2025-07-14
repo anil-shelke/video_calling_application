@@ -13,8 +13,7 @@ const app = express();
 const PORT = process.env.PORT;
 
 app.use(cors({
-    // origin: 'http://localhost:5173',
-    origin: 'https://video-calling-frontend-sarb.onrender.com',
+    origin: process.env.FRONTEND_URL,
     credentials: true
 }))
 
